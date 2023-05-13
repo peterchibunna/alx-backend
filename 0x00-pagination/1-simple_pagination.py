@@ -36,6 +36,8 @@ class Server:
         return self.__dataset
 
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
+        """Implement a simple pagination of data
+        """
         start_index = page_size * (page - 1)
         end_index = page_size * page
         if type(page) == int and type(page_size) == int and page > 0 and \
