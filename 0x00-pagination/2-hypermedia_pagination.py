@@ -59,8 +59,9 @@ class Server:
         start_index, end_index = index_range(page, page_size)
         total_pages = math.ceil(dataset_size / page_size)
         next_page = page + 1 if end_index < len(self.__dataset) else None
+        prev_page = page - 1 if start_index > 0 else None
         # next_page = page + 1 if page + 1 < total_pages else None
-        prev_page = page - 1 if page - 1 > 0 else None
+        # prev_page = page - 1 if page - 1 > 0 else None
         return dict(
             page_size=len(data),
             page=page,
