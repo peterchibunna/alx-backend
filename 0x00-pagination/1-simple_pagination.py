@@ -38,13 +38,13 @@ class Server:
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
         """Implement a simple pagination of data
         """
-        start_index = page_size * (page - 1)
-        end_index = page_size * page
-        if type(page) == int and type(page_size) == int and page > 0 and \
-                page_size > 0:
-            start, end = index_range(page, page_size)
-            data = self.dataset()
-            if start > len(data):
-                return []
-            return data[start:end]
-        raise AssertionError
+        assert type(page) == int and type(page_size) == int
+        assert page > 0 and page_size > 0
+        # if type(page) == int and type(page_size) == int and page > 0 and \
+        #         page_size > 0:
+        start, end = index_range(page, page_size)
+        dataset = self.dataset()
+        if start > len(dataset):
+            return []
+        return dataset[start:end]
+        # raise AssertionError
