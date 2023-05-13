@@ -13,5 +13,5 @@ def index_range(page: int, page_size: int) -> tuple:
     Page numbers are 1-indexed, i.e. the first page is page 1.
     """
     start_index = page_size * (page - 1)
-    end_index = page_size * page
+    end_index = page_size + start_index
     return start_index, end_index
