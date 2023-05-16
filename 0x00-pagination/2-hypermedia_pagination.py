@@ -54,7 +54,10 @@ class Server:
     def get_hyper(self, page: int = 1, page_size: int = 10) -> Dict:
         """Implement a Hypermedia pagination of data
         """
-        dataset_size = len(self.dataset())
+        try:
+            dataset_size = len(self.dataset())
+        except TypeError:
+            dataset_size = 0
         data = self.get_page(page, page_size)
         start_index, end_index = index_range(page=page, page_size=page_size)
         total_pages = math.ceil(dataset_size / page_size)
