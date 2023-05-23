@@ -34,7 +34,7 @@ def get_locale() -> str:
 def home_page():
     """Displays the index page"""
     try:
-        return render_template("3-index.html")
+        return render_template("4-index.html")
     except ValueError:
         pass
 
