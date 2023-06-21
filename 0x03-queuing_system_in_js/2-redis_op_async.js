@@ -9,7 +9,7 @@ client.connect()
       console.log('Redis client connected to the server');
       func();
     })
-    .catch(err => console.log('Redis client not connected to the server:', err.toString()));
+    .catch(err => console.log('Redis client not connected to the server:', err.message));
 
 const setNewSchool = (schoolName, value) => {
   client.set(schoolName, value, print)
