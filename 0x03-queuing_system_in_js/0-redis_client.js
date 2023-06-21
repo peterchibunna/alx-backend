@@ -8,4 +8,4 @@ const client = createClient({
 // client.on('error', err => console.log('Redis client not connected to the server:', err.toString()));
 client.connect()
     .then(r => console.log('Redis client connected to the server'))
-    .catch(err => console.log('Redis client not connected to the server:', err.toString()));
+    .catch(err => console.log('Redis client not connected to the server:', err.message));

@@ -18,7 +18,7 @@ client.connect()
       }
       displayHashTableData('HolbertonSchools');
     })
-    .catch(err => console.log('Redis client not connected to the server:', err.toString()));
+    .catch(err => console.log('Redis client not connected to the server:', err.message));
 
 const setHashTableData = (hashName, fieldName, fieldValue) => {
   client.hSet(hashName, fieldName, fieldValue, print)

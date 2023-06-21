@@ -1,13 +1,13 @@
 import {createClient, print} from 'redis';
 
-const util = require('util');
-const {promisify} = util;
+import {promisify}  from 'util';
+
 const client = createClient({});
 
 client.connect()
-    .then(r => {
+    .then(async(r) => {
       console.log('Redis client connected to the server');
-      func();
+      await func();
     })
     .catch(err => console.log('Redis client not connected to the server:', err.message));
 

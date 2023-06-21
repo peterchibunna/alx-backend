@@ -1,4 +1,4 @@
-const express = require('express');
+import express from 'express';
 const util = require('util');
 const {createClient} = require("redis");
 const {promisify} = util;
